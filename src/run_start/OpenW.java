@@ -1,8 +1,8 @@
-package Run;
+package run_start;
 
 import javax.swing.JFrame;
 
-import Window.CopySims;
+import window_copins.CopySims;
 
 public class OpenW extends JFrame {
 

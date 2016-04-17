@@ -1,4 +1,4 @@
-package Window;
+package window_copins;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -18,8 +18,8 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
-import MojeMetody.AllCpyOp;
-import MojeMetody.Copy;
+import myMethod.AllCpyOp;
+import myMethod.Copy;
 
 public class CopySims extends JFrame implements ActionListener {
 	

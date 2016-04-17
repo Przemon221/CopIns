@@ -1,4 +1,4 @@
-package MojeMetody;
+package myMethod;
 
 
 import java.io.BufferedReader;

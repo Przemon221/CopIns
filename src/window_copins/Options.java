@@ -1,4 +1,4 @@
-package Window;
+package window_copins;
 
 
 import javax.swing.JButton;

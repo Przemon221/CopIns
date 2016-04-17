@@ -1,4 +1,4 @@
-package Window;
+package window_copins;
 
 
 
@@ -11,7 +11,7 @@ import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
-import MojeMetody.Copy;
+import myMethod.Copy;
 
 public class FileList extends JFrame implements ActionListener {
 	
