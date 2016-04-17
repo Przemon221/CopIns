@@ -23,7 +23,7 @@ import MojeMetody.Copy;
 
 public class CopySims extends JFrame implements ActionListener {
 	
-	
+   // ArrayList<String> arList = new ArrayList<>();
 	
 	private JLabel lPlace,lWhere;
 	private JTextField tPlace,tWhere,tChoice,tInstall;
@@ -32,6 +32,7 @@ public class CopySims extends JFrame implements ActionListener {
 	private String place;
 	private String where;
 	String memory_path ="";
+	String c;
 	
 	
 	public CopySims (){
@@ -148,6 +149,7 @@ public class CopySims extends JFrame implements ActionListener {
 		String tInstallPath ="";
 		String tOpenpath ="";
 		String ex="";
+		
 		
 		FileList list = new FileList();
 		
@@ -285,11 +287,13 @@ public class CopySims extends JFrame implements ActionListener {
 		
 			
 			try {
+			    AllCpyOp cpyAll = new AllCpyOp();
+			    String good="";
 				FileReader fileReader = new FileReader("files.txt");
 				BufferedReader bufferReader = new BufferedReader(fileReader);
 				
 				String linia=""; 
-				
+				int n=0; // tutaj jestem
 				ArrayList<String> arList = new ArrayList<>();
 				
 				while ((linia = bufferReader.readLine()) !=null ) {
@@ -305,6 +309,10 @@ public class CopySims extends JFrame implements ActionListener {
 							System.out.println(linia);
 							System.out.println("MaM GO !");
 							arList.add(linia);
+							c = arList.get(n); // dziala tylko dla jednego przyadku
+							good = c;
+							//cpyAll.add_arList_files(good);
+							n++;
 							
 						}
 					else 
@@ -351,7 +359,7 @@ public class CopySims extends JFrame implements ActionListener {
 			path.setDefaultCloseOperation(HIDE_ON_CLOSE);
 			path.setVisible(true);
 			path.setLocation(500, 400);
-			
+			path.setLocationRelativeTo(null);
 		}
 		
 	
@@ -405,11 +413,58 @@ public class CopySims extends JFrame implements ActionListener {
 	        a.setVisible(true);
 	        //sims.setLocation(500,400);
 	        a.setLocationRelativeTo(null);
+	        
 		}
 		else if (zrodlo == bGroup) // zrobic grupowe kopiowanie
-		{
-		    AllCpyOp acOp = new AllCpyOp();
-		    acOp.AllCpy();
+		{ 
+		    AllCpyOp path_files = new AllCpyOp();
+		    
+		    
+		    String a,b;
+		    //boolean retValList;
+		    a = tPlace.getText();
+		    b = tWhere.getText();
+		    
+		    
+		    try {
+		        ex = tChoice.getText();
+                path_files.read_all(ex,a,b);
+            } catch (IOException e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+            }
+		    //path_files.add_path(a, b);		    
+           // path_files.show_files();
+         
+		    
+		    
+		    
+		    
+		    
+		   /* AllCpyOp acOp = new AllCpyOp();    //Chce zrobic tak by przekazywako sie oko.txt i oko1.txt a nie oko1.txt w i tak ciagle //potem wykorzystac class Copy aby skopiowac wielokrotnie
+		     
+		           retValList = c.endsWith(".txt");
+	                if (retValList== true)
+	                {  
+	                    
+	                    
+	                    good += c;
+	                    acOp.AllCpy(a,b,good);
+	                    //good = c;
+	                }
+	                else
+	                {
+	                    acOp.AllCpy("nie","nie","nie");
+	                }
+		       
+		       
+		   
+		   // c = arList.get(0);
+		    
+		    */
+		    
+		    
+		    
 		}
 		
 		  
