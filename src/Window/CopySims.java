@@ -433,35 +433,6 @@ public class CopySims extends JFrame implements ActionListener {
                 // TODO Auto-generated catch block
                 e.printStackTrace();
             }
-		    //path_files.add_path(a, b);		    
-           // path_files.show_files();
-         
-		    
-		    
-		    
-		    
-		    
-		   /* AllCpyOp acOp = new AllCpyOp();    //Chce zrobic tak by przekazywako sie oko.txt i oko1.txt a nie oko1.txt w i tak ciagle //potem wykorzystac class Copy aby skopiowac wielokrotnie
-		     
-		           retValList = c.endsWith(".txt");
-	                if (retValList== true)
-	                {  
-	                    
-	                    
-	                    good += c;
-	                    acOp.AllCpy(a,b,good);
-	                    //good = c;
-	                }
-	                else
-	                {
-	                    acOp.AllCpy("nie","nie","nie");
-	                }
-		       
-		       
-		   
-		   // c = arList.get(0);
-		    
-		    */
 		    
 		    
 		    
