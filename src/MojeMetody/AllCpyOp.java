@@ -9,6 +9,10 @@ import java.io.IOException;
 import java.nio.Buffer;
 import java.util.ArrayList;
 
+import javax.swing.JOptionPane;
+
+
+
 
 
 public class AllCpyOp {
@@ -28,10 +32,15 @@ public class AllCpyOp {
     
     public void read_all(String temp_ex,String pathPlace, String pathWhere) throws IOException
     {   
+        
         Copy copy = new Copy();
         place = pathPlace;
         where = pathWhere;
         System.out.println(place+where);
+        int n=0;
+        
+        
+
         
         try {
           FileReader reader = new FileReader("files.txt");
@@ -49,6 +58,10 @@ public class AllCpyOp {
                           System.out.println(linia);
                           System.out.println("mam GOOO");
                           copy.cpy(all_think, all_think2);
+                          n++;
+                          
+                          
+                          
                       }
                       else
                       {
@@ -62,7 +75,7 @@ public class AllCpyOp {
                       
                   }
           
-    
+          JOptionPane.showMessageDialog(null, "Operation done!"+" Copy:"+n+"files" , "Done!" ,JOptionPane.INFORMATION_MESSAGE);
          reader.close(); 
         } catch (FileNotFoundException e) {
             // TODO Auto-generated catch block
