@@ -311,7 +311,7 @@ public class CopySims extends JFrame implements ActionListener {
 							arList.add(linia);
 							c = arList.get(n); // dziala tylko dla jednego przyadku
 							good = c;
-							cpyAll.add_arList_files(good);
+							//cpyAll.add_arList_files(good);
 							n++;
 							
 						}
@@ -359,7 +359,7 @@ public class CopySims extends JFrame implements ActionListener {
 			path.setDefaultCloseOperation(HIDE_ON_CLOSE);
 			path.setVisible(true);
 			path.setLocation(500, 400);
-			
+			path.setLocationRelativeTo(null);
 		}
 		
 	
@@ -413,6 +413,7 @@ public class CopySims extends JFrame implements ActionListener {
 	        a.setVisible(true);
 	        //sims.setLocation(500,400);
 	        a.setLocationRelativeTo(null);
+	        
 		}
 		else if (zrodlo == bGroup) // zrobic grupowe kopiowanie
 		{ 
@@ -425,10 +426,16 @@ public class CopySims extends JFrame implements ActionListener {
 		    b = tWhere.getText();
 		    
 		    
-		    
-		    path_files.add_path(a, b);
-		    path_files.show_files();
-		    
+		    try {
+		        ex = tChoice.getText();
+                path_files.read_all(ex,a,b);
+            } catch (IOException e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+            }
+		    //path_files.add_path(a, b);		    
+           // path_files.show_files();
+         
 		    
 		    
 		    

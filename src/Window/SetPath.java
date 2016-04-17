@@ -14,7 +14,7 @@ import javax.swing.JTextField;
 
 public class SetPath extends JFrame implements ActionListener {
 	
-	private JButton bSet;
+	private JButton bSet,bOption;
 	private JLabel lPath;
 	private JTextField tPath;
 	
@@ -34,6 +34,11 @@ public class SetPath extends JFrame implements ActionListener {
 		
 		bSet.addActionListener(this);
 		
+		bOption = new JButton();
+		bOption.setText("Options");
+		bOption.setBounds(280, 50, 100, 20);
+		add(bOption);
+		bOption.addActionListener(this);        
 		
 		
 		lPath = new JLabel();
@@ -50,32 +55,48 @@ public class SetPath extends JFrame implements ActionListener {
 	
 	@Override
 	public void actionPerformed(ActionEvent z) {
-	
+	    Object zrodlo = z.getSource();
 		
-		
-		
-		try {
-			PrintWriter zapis = new PrintWriter("path.txt");
-			Scanner skaner = new Scanner(tPath.getText());
-			while (skaner.hasNext())
-			{
-				
-				zapis.println(skaner.nextLine());
-				
-				
-			}
-			zapis.close();
-			skaner.close();
-			JOptionPane.showMessageDialog(null,"Operation completed","Message",JOptionPane.INFORMATION_MESSAGE);
-		} catch (FileNotFoundException e1) {
-			// TODO Auto-generated catch block
-			e1.printStackTrace();
-		}
-		
-		
+	    if(zrodlo==bSet)
+	    {
+	        try {
+	            PrintWriter zapis = new PrintWriter("path.txt");
+	            Scanner skaner = new Scanner(tPath.getText());
+	            while (skaner.hasNext())
+	            {
+	                
+	                zapis.println(skaner.nextLine());
+	                
+	                
+	            }
+	            zapis.close();
+	            skaner.close();
+	            JOptionPane.showMessageDialog(null,"Operation completed","Message",JOptionPane.INFORMATION_MESSAGE);
+	        } catch (FileNotFoundException e1) {
+	            // TODO Auto-generated catch block
+	            e1.printStackTrace();
+	        }
+	        
+	        
 
+	        
+	    }
+	    
+	    else if(zrodlo==bOption)
+        {
+            Options wOption = new Options();
+            wOption.setDefaultCloseOperation(HIDE_ON_CLOSE);
+            wOption.setVisible(true);
+            wOption.setLocationRelativeTo(null);
+            
+        }
+	    
+	    
+	    }
+	    
+	   
 		
-	}
 		
+				
 		
 }
